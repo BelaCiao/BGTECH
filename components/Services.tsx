@@ -4,28 +4,28 @@ import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
   {
+    id: 'pc-gamer',
+    title: 'PC Gamer & Montagem',
+    description: 'Especialistas em montagem de setups, upgrades de hardware, cable management e otimização de sistema para jogos e alta performance.',
+    image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: 'notebook',
+    title: 'Manutenção de Notebooks',
+    description: 'Troca de telas, teclados e baterias. Reparo avançado em placas mãe, dobradiças e formatação completa para todas as marcas.',
+    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
     id: 'tv',
-    title: 'Reparo em TV LED, LCD & Plasma',
-    description: 'Diagnóstico preciso e conserto de telas, backlights e placas principais. Recuperamos a qualidade de imagem do seu televisor.',
+    title: 'TVs Smart & 4K',
+    description: 'Diagnóstico preciso em TVs LED e QLED. Conserto de barramento de LED (imagem escura), fontes e placas principais.',
     image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1000&auto=format&fit=crop'
   },
   {
-    id: 'audio',
-    title: 'Sistemas de Som & Amplificadores',
-    description: 'Reparo de placas de som, receivers, amplificadores e equipamentos de áudio profissionais e domésticos.',
+    id: 'eletronicos',
+    title: 'Microondas e Áudio',
+    description: 'Manutenção em fornos microondas, caixas de som JBL, amplificadores e outros equipamentos eletrônicos domésticos.',
     image: 'https://images.unsplash.com/photo-1558403194-611308249627?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    id: 'microwave',
-    title: 'Manutenção de Microondas',
-    description: 'Troca de magnetron, reparo de painel, substituição de capacitores e fusíveis de alta tensão. Segurança garantida.',
-    image: 'https://images.unsplash.com/photo-1585659722983-3a675dabf23d?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    id: 'boards',
-    title: 'Reparo de Placas Eletrônicas',
-    description: 'Análise e reparo de circuitos em nível de componente para diversos equipamentos eletrônicos.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop'
   }
 ];
 
@@ -39,7 +39,7 @@ export const Services: React.FC = () => {
           </h2>
           <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Utilizamos peças de qualidade e equipamentos de ponta para garantir o melhor reparo para o seu eletrônico.
+            Foco total em <strong>Computadores de Alto Desempenho</strong> e <strong>Notebooks</strong>, além de eletrônicos em geral.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export const Services: React.FC = () => {
                 <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">
                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
                 </div>
-                <span className="font-bold text-gray-800 text-lg">Atendimento Online</span>
+                <span className="font-bold text-gray-800 text-lg">Montagem Gamer</span>
              </div>
              <div className="flex flex-col items-center gap-4 group">
                 <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300">

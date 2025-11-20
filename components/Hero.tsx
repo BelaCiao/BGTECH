@@ -10,26 +10,27 @@ interface QuizData {
   issue: string;
   details: string;
   name: string;
+  phone: string;
 }
 
 const DEVICE_OPTIONS = [
-  { id: 'PC', label: 'PC / Computador', icon: (
+  { id: 'PC', label: 'PC Gamer / Montagem', icon: (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
       <path d="M5 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H5Zm.5 14a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1Zm2 0a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1ZM5 1.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-5Z"/>
     </svg>
   )},
-  { id: 'NOTEBOOK', label: 'Notebook', icon: (
+  { id: 'NOTEBOOK', label: 'Notebook / Laptop', icon: (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
       <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
     </svg>
   )},
-  { id: 'TV', label: 'Televisor', icon: (
+  { id: 'TV', label: 'TV / Smart TV', icon: (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M9 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M6 3a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H6zm0 1h8a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M11 13H5a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1z"/></svg>
   )},
   { id: 'MICROONDAS', label: 'Microondas', icon: (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0h-11ZM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-11Z"/><path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-6Zm8 1a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/></svg>
   )},
-  { id: 'AUDIO', label: 'Som/Áudio', icon: (
+  { id: 'AUDIO', label: 'Som / Áudio', icon: (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5zM7.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5zM3.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/></svg>
   )},
   { id: 'OUTROS', label: 'Outros', icon: (
@@ -38,20 +39,20 @@ const DEVICE_OPTIONS = [
 ] as const;
 
 const BRANDS_BY_DEVICE: Record<string, string[]> = {
-  PC: ['Dell', 'HP', 'Lenovo', 'Asus', 'Montado/Gamer', 'Acer', 'Outra'],
-  NOTEBOOK: ['Dell', 'Acer', 'Lenovo', 'Samsung', 'HP', 'Asus', 'Apple', 'Positivo/Multilaser'],
-  TV: ['Samsung', 'LG', 'Philips', 'TCL', 'Sony', 'Panasonic', 'AOC', 'Outra'],
+  PC: ['Montado/Gamer', 'Dell', 'HP', 'Lenovo', 'Asus', 'Acer', 'Outra'],
+  NOTEBOOK: ['Dell', 'Acer', 'Lenovo', 'Samsung', 'HP', 'Asus', 'MacBook/Apple', 'Positivo/Multilaser'],
+  TV: ['Samsung', 'LG', 'TCL', 'Philips', 'Sony', 'Panasonic', 'AOC', 'Outra'],
   MICROONDAS: ['Brastemp', 'Electrolux', 'Consul', 'Philco', 'Panasonic', 'Midea', 'Outra'],
   AUDIO: ['JBL', 'Sony', 'LG', 'Philips', 'Pioneer', 'Outra'],
   OUTROS: ['Não sei a marca', 'Outra']
 };
 
 const ISSUES_BY_DEVICE: Record<string, string[]> = {
-  PC: ['Não Liga', 'Liga sem Vídeo', 'Tela Azul / Travando', 'Lentidão / Vírus', 'Limpeza Preventiva', 'Formatação', 'Outro'],
-  NOTEBOOK: ['Tela Quebrada', 'Não Liga', 'Bateria / Carregador', 'Teclado com defeito', 'Lentidão / Vírus', 'Dobradiça Quebrada', 'Outro'],
-  TV: ['Não Liga', 'Sem imagem / Tela Escura', 'Tela Quebrada', 'Imagem Azulada', 'Liga e desliga', 'Outro defeito'],
+  PC: ['Orçamento Montagem Gamer', 'Não Liga', 'Liga sem Vídeo', 'Lentidão / Travando', 'Limpeza / Formatação', 'Outro Defeito'],
+  NOTEBOOK: ['Tela Quebrada', 'Não Liga', 'Bateria viciada', 'Teclado com defeito', 'Lentidão / Formatação', 'Dobradiça Quebrada', 'Outro'],
+  TV: ['Tela Escura (Sem Imagem)', 'Não Liga', 'Tela Quebrada', 'Imagem Azulada', 'Liga e desliga', 'Outro defeito'],
   MICROONDAS: ['Não esquenta', 'Não liga', 'Prato não gira', 'Teclas não funcionam', 'Saiu Faísca', 'Outro defeito'],
-  AUDIO: ['Não liga', 'Sem som', 'Som Chiando', 'Não conecta Bluetooth', 'Botões ruins', 'Outro defeito'],
+  AUDIO: ['Não liga', 'Sem som', 'Som Chiando', 'Não carrega / Bateria', 'Botões ruins', 'Outro defeito'],
   OUTROS: ['Não funciona', 'Cabo ruim', 'Manutenção', 'Outro']
 };
 
@@ -62,7 +63,8 @@ export const Hero: React.FC = () => {
     brand: '',
     issue: '',
     details: '',
-    name: ''
+    name: '',
+    phone: ''
   });
 
   const progress = (step / 5) * 100;
@@ -84,7 +86,7 @@ export const Hero: React.FC = () => {
 
   const handleDetailsSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (quizData.name.trim()) {
+    if (quizData.name.trim() && quizData.phone.trim()) {
       setStep(5);
     }
   };
@@ -97,13 +99,14 @@ export const Hero: React.FC = () => {
 *Defeito:* ${quizData.issue}
 *Obs:* ${quizData.details || '-'}
 
-*Cliente:* ${quizData.name}`;
+*Cliente:* ${quizData.name}
+*Contato:* ${quizData.phone}`;
     
     return `https://wa.me/5553999335369?text=${encodeURIComponent(text)}`;
   };
 
   const generateEmailLink = () => {
-    const subject = "Novo orçamento";
+    const subject = "Novo orçamento - BGTECH";
     const body = `Olá BGTECH! Solicito orçamento.
     
 Aparelho: ${quizData.device}
@@ -111,7 +114,8 @@ Marca: ${quizData.brand}
 Defeito: ${quizData.issue}
 Obs: ${quizData.details || '-'}
 
-Cliente: ${quizData.name}`;
+Cliente: ${quizData.name}
+Contato: ${quizData.phone}`;
     
     return `mailto:maicongn@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -145,12 +149,12 @@ Cliente: ${quizData.name}`;
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-[1.1] tracking-tight drop-shadow-2xl">
-              DIAGNÓSTICO<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">RÁPIDO E PRECISO</span>
+              ESPECIALISTAS EM<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">PC GAMER E NOTEBOOK</span>
             </h1>
             
             <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Especialistas em <strong>PCs, Notebooks, TVs e Eletrônicos</strong>. Selecione seu aparelho ao lado e receba um pré-orçamento via WhatsApp agora mesmo.
+              Montagem, manutenção e reparo de <strong>Computadores, Notebooks e Eletrônicos</strong>. Selecione seu aparelho e receba um pré-orçamento agora mesmo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-sm font-bold text-gray-400">
@@ -171,10 +175,10 @@ Cliente: ${quizData.name}`;
 
           {/* RIGHT COLUMN: QUIZ CARD */}
           <div className="order-1 lg:order-2 w-full">
-            <div className="bg-white rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-gray-700 md:min-h-[520px] flex flex-col relative">
+            <div className="bg-white rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-gray-700 md:min-h-[550px] flex flex-col relative">
                
                {/* Header Bar */}
-               <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+               <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center shrink-0">
                   <h3 className="font-bold text-gray-800 flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                     Orçamento Inteligente
@@ -186,7 +190,7 @@ Cliente: ${quizData.name}`;
 
                {/* Progress Line */}
                {step < 5 && (
-                 <div className="w-full bg-gray-100 h-1">
+                 <div className="w-full bg-gray-100 h-1 shrink-0">
                    <div className="bg-red-600 h-1 transition-all duration-500" style={{ width: `${progress}%` }}></div>
                  </div>
                )}
@@ -196,18 +200,26 @@ Cliente: ${quizData.name}`;
                  {/* STEP 1: DEVICE */}
                  {step === 1 && (
                    <div className="animate-fade-in">
-                     <h4 className="text-xl font-black text-gray-900 mb-6 text-center">O que precisamos consertar?</h4>
-                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+                     <h4 className="text-xl font-black text-gray-900 mb-6 text-center">O que vamos consertar hoje?</h4>
+                     <div className="grid grid-cols-2 gap-3 md:gap-4">
                        {DEVICE_OPTIONS.map((opt) => (
                          <button
                            key={opt.id}
                            onClick={() => handleDeviceSelect(opt.id)}
-                           className="flex flex-col items-center justify-center p-4 border-2 border-gray-100 rounded-xl hover:border-red-500 hover:bg-red-50 transition-all group gap-3 aspect-square active:scale-95 touch-manipulation"
+                           className={`flex flex-col items-center justify-center p-4 border-2 rounded-xl transition-all group gap-3 touch-manipulation active:scale-95 ${
+                             opt.id === 'PC' || opt.id === 'NOTEBOOK' 
+                             ? 'border-red-100 bg-red-50 hover:bg-red-100 hover:border-red-400' 
+                             : 'border-gray-100 hover:border-gray-300 hover:bg-gray-50'
+                           }`}
                          >
-                           <div className="text-gray-400 group-hover:text-red-600 transition-colors transform group-hover:scale-110">
+                           <div className={`transition-colors transform group-hover:scale-110 ${
+                             opt.id === 'PC' || opt.id === 'NOTEBOOK' ? 'text-red-600' : 'text-gray-400 group-hover:text-gray-600'
+                           }`}>
                              {opt.icon}
                            </div>
-                           <span className="font-bold text-xs md:text-sm text-center text-gray-700 group-hover:text-red-700 leading-tight">{opt.label}</span>
+                           <span className={`font-bold text-xs md:text-sm text-center leading-tight ${
+                              opt.id === 'PC' || opt.id === 'NOTEBOOK' ? 'text-red-700' : 'text-gray-700'
+                           }`}>{opt.label}</span>
                          </button>
                        ))}
                      </div>
@@ -217,7 +229,7 @@ Cliente: ${quizData.name}`;
                  {/* STEP 2: BRAND */}
                  {step === 2 && quizData.device && (
                    <div className="animate-fade-in">
-                     <h4 className="text-xl font-black text-gray-900 mb-6 text-center">Qual a marca do aparelho?</h4>
+                     <h4 className="text-xl font-black text-gray-900 mb-6 text-center">Qual a marca do {quizData.device === 'PC' ? 'PC' : 'aparelho'}?</h4>
                      <div className="grid grid-cols-2 gap-3">
                        {BRANDS_BY_DEVICE[quizData.device].map((brand) => (
                          <button
@@ -251,11 +263,11 @@ Cliente: ${quizData.name}`;
                    </div>
                  )}
 
-                 {/* STEP 4: DETAILS */}
+                 {/* STEP 4: DETAILS & CONTACT */}
                  {step === 4 && (
                     <form onSubmit={handleDetailsSubmit} className="animate-fade-in flex flex-col h-full">
-                      <h4 className="text-xl font-black text-gray-900 mb-4 text-center">Para quem enviamos o orçamento?</h4>
-                      <div className="space-y-4 mb-4">
+                      <h4 className="text-xl font-black text-gray-900 mb-4 text-center">Seus dados de contato</h4>
+                      <div className="space-y-3 mb-4">
                         <div>
                           <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Seu Nome</label>
                           <input
@@ -269,12 +281,23 @@ Cliente: ${quizData.name}`;
                           />
                         </div>
                         <div>
+                          <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">WhatsApp / Telefone</label>
+                          <input
+                            type="tel"
+                            required
+                            value={quizData.phone}
+                            onChange={(e) => setQuizData({ ...quizData, phone: e.target.value })}
+                            className="w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-red-500 outline-none font-bold text-gray-800 placeholder-gray-300 transition-all"
+                            placeholder="(53) 99999-9999"
+                          />
+                        </div>
+                        <div>
                           <label className="block text-xs font-bold text-gray-500 mb-1 uppercase">Detalhes (Opcional)</label>
                           <textarea
                             value={quizData.details}
                             onChange={(e) => setQuizData({ ...quizData, details: e.target.value })}
-                            className="w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-red-500 outline-none h-24 resize-none text-sm text-gray-800 transition-all"
-                            placeholder="Ex: O computador liga mas não dá vídeo..."
+                            className="w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:border-red-500 outline-none h-20 resize-none text-sm text-gray-800 transition-all"
+                            placeholder={quizData.device === 'PC' ? "Ex: Quero rodar GTA V, preciso de 16GB RAM..." : "Ex: O aparelho liga mas não funciona..."}
                           ></textarea>
                         </div>
                       </div>
@@ -321,7 +344,7 @@ Cliente: ${quizData.name}`;
                       </a>
 
                       <button
-                        onClick={() => {setStep(1); setQuizData({device: null, brand: '', issue: '', details: '', name: ''})}}
+                        onClick={() => {setStep(1); setQuizData({device: null, brand: '', issue: '', details: '', name: '', phone: ''})}}
                         className="text-xs text-gray-400 hover:text-red-500 transition-colors p-2"
                       >
                         Reiniciar Orçamento
@@ -331,7 +354,7 @@ Cliente: ${quizData.name}`;
 
                  {/* Navigation Back */}
                  {step > 1 && step < 5 && (
-                   <div className="mt-4 pt-4 border-t border-gray-50">
+                   <div className="mt-4 pt-4 border-t border-gray-50 shrink-0">
                      <button 
                         onClick={goBack}
                         className="text-gray-400 hover:text-gray-600 text-xs font-bold flex items-center gap-1 p-2"
